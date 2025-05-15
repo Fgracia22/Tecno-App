@@ -49,6 +49,31 @@ function initMap() {
     cargarLugares();
 }
 
+// Function to handle the dropdown for each place
+function renderLugares(lugares) {
+    const list = document.getElementById('lugares-list');
+    list.innerHTML = '';
+    lugares.forEach(lugar => {
+        const details = document.createElement('details');
+        details.className = 'lugar-dropdown';
+
+        const summary = document.createElement('summary');
+        summary.textContent = lugar.nombre;
+
+        const content = document.createElement('div');
+        content.className = 'lugar-content';
+        content.innerHTML = `
+            <p>${lugar.descripcion}</p>
+            <!-- Add more fields as needed -->
+        `;
+
+        details.appendChild(summary);
+        details.appendChild(content);
+        list.appendChild(details);
+    });
+}
+
+
 document.getElementById('sorpresaBtn').addEventListener('click', planSorpresa);
 
 window.addEventListener('DOMContentLoaded', initMap);
