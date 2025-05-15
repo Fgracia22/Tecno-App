@@ -90,7 +90,7 @@ h1 {
 }
 
 
-#lugar-dropdown {
+.lugar-dropdown {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -99,13 +99,32 @@ h1 {
     padding: 0.5em;
 }
 
-#lugar-dropdown summary {
+.lugar-dropdown summary {
     font-weight: bold;
     cursor: pointer;
     outline: none;
 }
 
-#lugar-content {
+.categoria-dropdown {
+    margin-bottom: 16px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f9fbff;
+}
+
+.categoria-dropdown summary {
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.categoria-dropdown details {
+    margin-top: 8px;
+}
+
+
+.lugar-content {
     margin-top: 0.5em;
     padding-left: 1em;
 }

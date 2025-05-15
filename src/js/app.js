@@ -5,7 +5,7 @@ let markers = [];
 async function cargarLugares() {
     const response = await fetch('lugares.json');
     lugares = await response.json();
-    mostrarLugares();
+    renderLugares(lugares);  // <--- aquí!
     ponerMarcadores();
 }
 
@@ -49,29 +49,48 @@ function initMap() {
     cargarLugares();
 }
 
-// Function to handle the dropdown for each place
+
 function renderLugares(lugares) {
     const list = document.getElementById('lugares-list');
     list.innerHTML = '';
+
+    // Agrupem per categoria
+    const categorias = {};
     lugares.forEach(lugar => {
-        const details = document.createElement('details');
-        details.className = 'lugar-dropdown';
+        if (!categorias[lugar.categoria]) {
+            categorias[lugar.categoria] = [];
+        }
+        categorias[lugar.categoria].push(lugar);
+    });
 
-        const summary = document.createElement('summary');
-        summary.textContent = lugar.nombre;
+    // Creem desplegables per cada categoria
+    Object.keys(categorias).forEach(categoria => {
+        const catDetails = document.createElement('details');
+        catDetails.className = 'categoria-dropdown';
+        const catSummary = document.createElement('summary');
+        catSummary.textContent = categoria;
+        catDetails.appendChild(catSummary);
 
-        const content = document.createElement('div');
-        content.className = 'lugar-content';
-        content.innerHTML = `
-            <p>${lugar.descripcion}</p>
-            <!-- Add more fields as needed -->
-        `;
+        categorias[categoria].forEach(lugar => {
+            const lugarDetails = document.createElement('details');
+            lugarDetails.className = 'lugar-dropdown';
 
-        details.appendChild(summary);
-        details.appendChild(content);
-        list.appendChild(details);
+            const lugarSummary = document.createElement('summary');
+            lugarSummary.textContent = lugar.nombre;
+
+            const lugarContent = document.createElement('div');
+            lugarContent.className = 'lugar-content';
+            lugarContent.innerHTML = `<p>${lugar.descripcion || ''}</p>`;
+
+            lugarDetails.appendChild(lugarSummary);
+            lugarDetails.appendChild(lugarContent);
+            catDetails.appendChild(lugarDetails);
+        });
+
+        list.appendChild(catDetails);
     });
 }
+
 
 
 document.getElementById('sorpresaBtn').addEventListener('click', planSorpresa);
