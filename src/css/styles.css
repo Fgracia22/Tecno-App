@@ -1,0 +1,122 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: contain;
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom);
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #2d3a4b;
+    margin-top: 32px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#sorpresaBtn {
+    display: block;
+    margin: 0 auto 24px auto;
+    padding: 16px 0;
+    width: 90vw;
+    max-width: 400px;
+    background: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.10);
+    transition: background 0.2s;
+    outline: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+#sorpresaBtn:active,
+#sorpresaBtn:focus {
+    background: #005ecb;
+}
+
+#map {
+    width: 96vw;
+    max-width: 480px;
+    height: 38vh;
+    min-height: 220px;
+    margin: 0 auto 24px auto;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+    border: 1.5px solid #e3eafc;
+    overflow: hidden;
+    touch-action: none;
+}
+
+#lugares-list {
+    width: 96vw;
+    max-width: 480px;
+    margin: 0 auto 32px auto;
+    list-style: none;
+    padding: 0;
+}
+
+#lugares-list li {
+    background: #fff;
+    margin-bottom: 14px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(44, 62, 80, 0.06);
+    font-size: 1.08em;
+    color: #2d3a4b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+    border: 1px solid #e9eefc;
+    min-height: 48px;
+}
+#lugares-list li:active {
+    background: #eaf3ff;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.25rem;
+        margin-top: 18px;
+        margin-bottom: 10px;
+    }
+    #sorpresaBtn {
+        font-size: 1em;
+        padding: 14px 0;
+        max-width: 98vw;
+    }
+    #map, #lugares-list {
+        width: 98vw;
+        max-width: 100vw;
+    }
+    #map {
+        min-height: 160px;
+        height: 32vh;
+    }
+    #lugares-list li {
+        padding: 12px 8px;
+        font-size: 1em;
+    }
+}
+
+/* Safe area para iPhone X y posteriores */
+@supports(padding: max(0px)) {
+    body {
+        padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
+}

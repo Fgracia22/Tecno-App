@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "Parc de la Sardana",
+        "categoria": "Parque",
+        "lat": 41.8782,
+        "lng": 2.8925
+    },
+    {
+        "nombre": "Cafetería Bon Café",
+        "categoria": "Cafetería",
+        "lat": 41.8765,
+        "lng": 2.8941
+    },
+    {
+        "nombre": "Ruta del Carrilet",
+        "categoria": "Ruta",
+        "lat": 41.8801,
+        "lng": 2.8902
+    },
+    {
+        "nombre": "Supermercat Bonpreu",
+        "categoria": "Supermercat",
+        "lat": 41.885401,
+        "lng": 2.872579
+    }
+]
