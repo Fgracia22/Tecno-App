@@ -44,6 +44,7 @@ h1 {
     -webkit-touch-callout: none;
     user-select: none;
 }
+
 #sorpresaBtn:active,
 #sorpresaBtn:focus {
     background: #005ecb;
@@ -85,10 +86,10 @@ h1 {
     border: 1px solid #e9eefc;
     min-height: 48px;
 }
+
 #lugares-list li:active {
     background: #eaf3ff;
 }
-
 
 /* --- Estil millorats per als desplegables --- */
 .lugar-dropdown,
@@ -178,6 +179,43 @@ h1 {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-4px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Llistes internes amb caixes petites i icones */
+.lugar-content ul {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.lugar-content li {
+    background: #f8fbff;
+    border: 1px solid #dceaf7;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #2c3e50;
+    box-shadow: 0 1px 4px rgba(0, 122, 255, 0.05);
+    transition: background 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
+.lugar-content li:hover {
+    background: #eaf4ff;
+    transform: translateY(-1px);
+}
+
+.lugar-content li::before {
+    content: attr(data-icon);
+    font-size: 1.1em;
+    display: inline-block;
+    width: 1.4em;
+    text-align: center;
+    color: #007aff;
+    flex-shrink: 0;
 }
 
 @media (max-width: 600px) {
