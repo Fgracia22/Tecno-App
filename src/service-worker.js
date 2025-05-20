@@ -1,6 +1,6 @@
 // filepath: c:\Users\Ferran\Documents\Tenco-app\src\service-worker.js
 
-const CACHE_NAME = 'tenco-app-cache-v6'; // Updated version
+const CACHE_NAME = 'tenco-app-cache-v7'; // Updated version
 const urlsToCache = [
     '/',
     '/index.html',
