@@ -49,7 +49,6 @@ function initMap() {
     cargarLugares();
 }
 
-
 function renderLugares(lugares) {
     const list = document.getElementById('lugares-list');
     list.innerHTML = '';
@@ -67,10 +66,18 @@ function renderLugares(lugares) {
     Object.keys(categorias).forEach(categoria => {
         const catDetails = document.createElement('details');
         catDetails.className = 'categoria-dropdown';
+
         const catSummary = document.createElement('summary');
         catSummary.textContent = categoria;
         catDetails.appendChild(catSummary);
 
+        // Espai per posar descripció personalitzada de la categoria
+        const catDescription = document.createElement('div');
+        catDescription.className = 'categoria-descripcio';
+        catDescription.innerHTML = `<p>Explora els llocs destacats dins la categoria <strong>${categoria}</strong>.</p>`;
+        catDetails.appendChild(catDescription);
+
+        // Afegim llocs dins de cada categoria
         categorias[categoria].forEach(lugar => {
             const lugarDetails = document.createElement('details');
             lugarDetails.className = 'lugar-dropdown';
@@ -80,7 +87,7 @@ function renderLugares(lugares) {
 
             const lugarContent = document.createElement('div');
             lugarContent.className = 'lugar-content';
-            lugarContent.innerHTML = `<p>${lugar.descripcion || ''}</p>`;
+            lugarContent.innerHTML = `<p>${lugar.descripcion || 'Sense descripció disponible.'}</p>`;
 
             lugarDetails.appendChild(lugarSummary);
             lugarDetails.appendChild(lugarContent);
@@ -90,6 +97,7 @@ function renderLugares(lugares) {
         list.appendChild(catDetails);
     });
 }
+
 
 
 

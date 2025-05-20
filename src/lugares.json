@@ -1,26 +1,23 @@
 [
     {
         "nombre": "Parc de la Sardana",
-        "categoria": "Parque",
+        "descripcion": "Un bon lloc per relaxar-se i gaudir de la natura.",
+        "categoria": "Parcs",
         "lat": 41.8782,
         "lng": 2.8925
     },
     {
-        "nombre": "Cafetería Bon Café",
-        "categoria": "Cafetería",
-        "lat": 41.8765,
-        "lng": 2.8941
-    },
-    {
-        "nombre": "Ruta del Carrilet",
-        "categoria": "Ruta",
-        "lat": 41.8801,
-        "lng": 2.8902
-    },
-    {
         "nombre": "Supermercat Bonpreu",
-        "categoria": "Supermercat",
+        "descripcion": "Supermercat amb una gran varietat de productes.",
+        "categoria": "Supermercats",
         "lat": 41.885401,
         "lng": 2.872579
+    },
+    {
+        "nombre": "Tomba del Soldat desconegut",
+        "descripcion":"Ruta per anar a caminar per Cassà de la Selva",
+        "categoria": "Rutes",
+        "lat": 41.89232577289942,
+        "lng": 2.89259962396168
     }
 ]
