@@ -33,7 +33,8 @@ function renderCategoryBar() {
         'Restaurants': { emoji: '🍽️', img: 'img/restaurants.png' },
         'Cultura': { emoji: '🏛️', img: 'img/cultura.png' },
         'Esports': { emoji: '⚽', img: 'img/esports.png' },
-        'Altres': { emoji: '⭐', img: 'img/altres.png' }
+        'Altres': { emoji: '⭐', img: 'img/altres.png' },
+        'Supermercats': { emoji: '🏪', img: 'img/supermercat.png' } // Nova línia
         // Add more as needed
     };
 
@@ -55,12 +56,15 @@ function renderCategoryBar() {
         icon.className = 'category-icon' + (selectedCategory === categoria ? ' selected' : '');
         icon.title = categoria;
 
-        // Use emoji for now, but ready for images
-        // To use images, uncomment the next two lines and comment out the emoji line
-        // const img = document.createElement('img');
-        // img.src = iconMap[categoria]?.img || 'img/default.png';
-        // icon.appendChild(img);
-        icon.textContent = iconMap[categoria]?.emoji || '📍';
+        // Mostra la imatge si existeix, sinó mostra l’emoji
+        if (iconMap[categoria]?.img) {
+            const img = document.createElement('img');
+            img.src = iconMap[categoria].img;
+            img.alt = categoria;
+            icon.appendChild(img);
+        } else {
+            icon.textContent = iconMap[categoria]?.emoji || '📍';
+        }
 
         icon.addEventListener('click', () => {
             selectedCategory = categoria;
