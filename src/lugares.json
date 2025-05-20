@@ -1,23 +1,156 @@
 [
     {
-        "nombre": "Parc de la Sardana",
-        "descripcion": "Un bon lloc per relaxar-se i gaudir de la natura.",
-        "categoria": "Parcs",
-        "lat": 41.8782,
-        "lng": 2.8925
-    },
-    {
-        "nombre": "Supermercat Bonpreu",
-        "descripcion": "Supermercat amb una gran varietat de productes.",
-        "categoria": "Supermercats",
-        "lat": 41.885401,
-        "lng": 2.872579
+        "nombre": "Can Trinxeria",
+        "descripcion": "Masia històrica amb encant.",
+        "categoria": "Cultura",
+        "lat": 41.88939596171802,
+        "lng": 2.8787560472268527
     },
     {
         "nombre": "Tomba del Soldat desconegut",
-        "descripcion":"Ruta per anar a caminar per Cassà de la Selva",
-        "categoria": "Rutes",
+        "descripcion": "Ruta per anar a caminar per Cassà de la Selva.",
+        "categoria": "Natura",
         "lat": 41.89232577289942,
         "lng": 2.89259962396168
+    },
+    {
+        "nombre": "La Pahissa de Can Abras Casa Rural",
+        "descripcion": "Allotjament rural en un entorn tranquil i natural.",
+        "categoria": "Allotjament",
+        "lat": 41.870775656802635,
+        "lng": 2.9027812613688804
+    },
+    {
+        "nombre": "Pineda Fosca",
+        "descripcion": "Paratge natural ideal per fer passejades a l'ombra dels pins.",
+        "categoria": "Natura",
+        "lat": 41.86751096891585,
+        "lng": 2.8806334337264965
+    },
+    {
+        "nombre": "Mercadona",
+        "descripcion": "Supermercat amb una gran varietat de productes per a la llar.",
+        "categoria": "Botigues",
+        "lat": 41.893757040090236,
+        "lng": 2.864920659978333
+    },
+    {
+        "nombre": "Farmàcia Baleri",
+        "descripcion": "Farmàcia amb serveis de salut i productes farmacèutics.",
+        "categoria": "Serveis",
+        "lat": 41.8849707903388,
+        "lng": 2.880436672739926
+    },
+    {
+        "nombre": "UE Cassà - Camp de Futbol Municipal",
+        "descripcion": "Instal·lacions esportives per a la pràctica del futbol.",
+        "categoria": "Serveis",
+        "lat": 41.88430719752911,
+        "lng": 2.877655043828732
+    },
+    {
+        "nombre": "Parc dels Trefins",
+        "descripcion": "Parc urbà ideal per passejar i jugar amb infants.",
+        "categoria": "Natura",
+        "lat": 41.88789469023388,
+        "lng": 2.8670339454052782
+    },
+    {
+        "nombre": "Restaurant Bar Centre Recreatiu Cassanenc",
+        "descripcion": "Restaurant amb ambient local i menjar casolà.",
+        "categoria": "Restauració",
+        "lat": 41.88896235750509,
+        "lng": 2.876130719549205
+    },
+    {
+        "nombre": "El Jardí Good Vibes Only",
+        "descripcion": "Cafeteria amb encant i ambient relaxat.",
+        "categoria": "Restauració",
+        "lat": 41.888639008735765,
+        "lng": 2.8764503359211973
+    },
+    {
+        "nombre": "Pizzeria Cassà Kebab",
+        "descripcion": "Opcions ràpides com pizzes i kebabs.",
+        "categoria": "Restauració",
+        "lat": 41.88851049416907,
+        "lng": 2.87617670948241
+    },
+    {
+        "nombre": "Fleca pastisseria Nèctar",
+        "descripcion": "Fleca i pastisseria amb productes artesans.",
+        "categoria": "Botigues",
+        "lat": 41.88889000895658,
+        "lng": 2.875250748470591
+    },
+    {
+        "nombre": "CaixaBank Agrobank",
+        "descripcion": "Oficina bancària amb serveis financers.",
+        "categoria": "Serveis",
+        "lat": 41.88866589633224,
+        "lng": 2.875636654140456
+    },
+    {
+        "nombre": "Can Raset",
+        "descripcion": "Masia o establiment amb encant rural.",
+        "categoria": "Cultura",
+        "lat": 41.89051344768201,
+        "lng": 2.870329268146075
+    },
+    {
+        "nombre": "Caprabo",
+        "descripcion": "Supermercat amb secció de productes frescos.",
+        "categoria": "Botigues",
+        "lat": 41.89026500421115,
+        "lng": 2.8731246286899994
+    },
+    {
+        "nombre": "Cassà Oil S.L.",
+        "descripcion": "Gasolinera amb serveis per al vehicle.",
+        "categoria": "Serveis",
+        "lat": 41.89110261579945,
+        "lng": 2.8656482928458153
+    },
+    {
+        "nombre": "Plaça de l'Eixample",
+        "descripcion": "Plaça cèntrica amb espais per seure i descansar.",
+        "categoria": "Natura",
+        "lat": 41.890964844936036,
+        "lng": 2.8727395124665915
+    },
+    {
+        "nombre": "Parque del Uno de Octubre",
+        "descripcion": "Espai verd amb jocs infantils i bancs.",
+        "categoria": "Natura",
+        "lat": 41.886828133381165,
+        "lng": 2.8679630528452327
+    },
+    {
+        "nombre": "ParkArt",
+        "descripcion": "Espai dedicat a l'art i la cultura.",
+        "categoria": "Cultura",
+        "lat": 41.89704972461124,
+        "lng": 2.8688988448945203
+    },
+    {
+        "nombre": "Iglesia de Sant Martí",
+        "descripcion": "Església històrica de Cassà de la Selva.",
+        "categoria": "Cultura",
+        "lat": 41.887546990963216,
+        "lng": 2.874456304096318
+    },
+    {
+        "nombre": "House Of Burger Cassà",
+        "descripcion": "Hamburgueseria moderna amb opcions variades.",
+        "categoria": "Restauració",
+        "lat": 41.888710642693546,
+        "lng": 2.8774518983919033
+    },
+    {
+        "nombre": "La Bicycle",
+        "descripcion": "Botiga o espai relacionat amb el món ciclista.",
+        "categoria": "Botigues",
+        "lat": 41.88939596171802,
+        "lng": 2.8787560472268527
     }
 ]

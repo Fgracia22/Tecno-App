@@ -29,12 +29,12 @@ function renderCategoryBar() {
 
     // Prepare for images: use emoji or image URL
     const iconMap = {
-        'Parcs': { emoji: '🌳', img: 'img/parcs.png' },
-        'Restaurants': { emoji: '🍽️', img: 'img/restaurants.png' },
+        'Natura': { emoji: '🌳', img: 'img/natura.png' },
+        'Restauració': { emoji: '🍽️', img: 'img/restauracio.png' },
         'Cultura': { emoji: '🏛️', img: 'img/cultura.png' },
-        'Esports': { emoji: '⚽', img: 'img/esports.png' },
-        'Altres': { emoji: '⭐', img: 'img/altres.png' },
-        'Supermercats': { emoji: '🏪', img: 'img/supermercat.png' } // Nova línia
+        'Allotjament': { emoji: '🏨', img: 'img/allotjament.png' },
+        'Botigues': { emoji: '🏪', img: 'img/botiga.png' },
+        'Serveis': { emoji: '⭐', img: 'img/serveis.png' },
         // Add more as needed
     };
 
