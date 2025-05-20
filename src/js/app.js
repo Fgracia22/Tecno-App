@@ -1,12 +1,75 @@
 let lugares = [];
 let map;
 let markers = [];
+let selectedCategory = null;
+let categoriasGlobal = {}; // Store categories for icon rendering
 
 async function cargarLugares() {
     const response = await fetch('lugares.json');
     lugares = await response.json();
-    renderLugares(lugares);  // <--- aquí!
+    agrupaCategorias();
+    renderCategoryBar();
+    renderLugares(lugares);
     ponerMarcadores();
+}
+
+function agrupaCategorias() {
+    categoriasGlobal = {};
+    lugares.forEach(lugar => {
+        if (!categoriasGlobal[lugar.categoria]) {
+            categoriasGlobal[lugar.categoria] = [];
+        }
+        categoriasGlobal[lugar.categoria].push(lugar);
+    });
+}
+
+function renderCategoryBar() {
+    const bar = document.getElementById('category-bar');
+    bar.innerHTML = '';
+
+    // Prepare for images: use emoji or image URL
+    const iconMap = {
+        'Parcs': { emoji: '🌳', img: 'img/parcs.png' },
+        'Restaurants': { emoji: '🍽️', img: 'img/restaurants.png' },
+        'Cultura': { emoji: '🏛️', img: 'img/cultura.png' },
+        'Esports': { emoji: '⚽', img: 'img/esports.png' },
+        'Altres': { emoji: '⭐', img: 'img/altres.png' }
+        // Add more as needed
+    };
+
+    // "All" button
+    const allBtn = document.createElement('div');
+    allBtn.className = 'category-icon' + (selectedCategory === null ? ' selected' : '');
+    allBtn.title = 'Totes les categories';
+    allBtn.textContent = '🔎';
+    bar.appendChild(allBtn);
+    allBtn.addEventListener('click', () => {
+        selectedCategory = null;
+        renderCategoryBar();
+        renderLugares(lugares);
+        ponerMarcadores();
+    });
+
+    Object.keys(categoriasGlobal).forEach(categoria => {
+        const icon = document.createElement('div');
+        icon.className = 'category-icon' + (selectedCategory === categoria ? ' selected' : '');
+        icon.title = categoria;
+
+        // Use emoji for now, but ready for images
+        // To use images, uncomment the next two lines and comment out the emoji line
+        // const img = document.createElement('img');
+        // img.src = iconMap[categoria]?.img || 'img/default.png';
+        // icon.appendChild(img);
+        icon.textContent = iconMap[categoria]?.emoji || '📍';
+
+        icon.addEventListener('click', () => {
+            selectedCategory = categoria;
+            renderCategoryBar();
+            renderLugares(lugares.filter(l => l.categoria === categoria));
+            ponerMarcadores();
+        });
+        bar.appendChild(icon);
+    });
 }
 
 function mostrarLugares() {
@@ -31,7 +94,11 @@ function planSorpresa() {
 function ponerMarcadores() {
     markers.forEach(marker => map.removeLayer(marker));
     markers = [];
-    lugares.forEach(lugar => {
+    let filtered = lugares;
+    if (selectedCategory) {
+        filtered = lugares.filter(l => l.categoria === selectedCategory);
+    }
+    filtered.forEach(lugar => {
         if (lugar.lat && lugar.lng) {
             const marker = L.marker([lugar.lat, lugar.lng])
                 .addTo(map)
@@ -49,13 +116,13 @@ function initMap() {
     cargarLugares();
 }
 
-function renderLugares(lugares) {
+function renderLugares(lugaresFiltrados) {
     const list = document.getElementById('lugares-list');
     list.innerHTML = '';
 
     // Agrupem per categoria
     const categorias = {};
-    lugares.forEach(lugar => {
+    lugaresFiltrados.forEach(lugar => {
         if (!categorias[lugar.categoria]) {
             categorias[lugar.categoria] = [];
         }
