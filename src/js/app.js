@@ -4,6 +4,13 @@ let markers = [];
 let selectedCategory = null;
 let categoriasGlobal = {}; // Store categories for icon rendering
 
+// Add this helper function:
+function getBoundsForLugares(lugaresArr) {
+    const points = lugaresArr.filter(l => l.lat && l.lng).map(l => [l.lat, l.lng]);
+    if (points.length === 0) return null;
+    return L.latLngBounds(points);
+}
+
 async function cargarLugares() {
     const response = await fetch('lugares.json');
     lugares = await response.json();
@@ -11,6 +18,9 @@ async function cargarLugares() {
     renderCategoryBar();
     renderLugares(lugares);
     ponerMarcadores();
+    // Fit map to all points
+    const bounds = getBoundsForLugares(lugares);
+    if (bounds) map.fitBounds(bounds, { padding: [30, 30] });
 }
 
 function agrupaCategorias() {
@@ -49,6 +59,9 @@ function renderCategoryBar() {
         renderCategoryBar();
         renderLugares(lugares);
         ponerMarcadores();
+        // Fit map to all points
+        const bounds = getBoundsForLugares(lugares);
+        if (bounds) map.fitBounds(bounds, { padding: [30, 30] });
     });
 
     Object.keys(categoriasGlobal).forEach(categoria => {
@@ -69,8 +82,12 @@ function renderCategoryBar() {
         icon.addEventListener('click', () => {
             selectedCategory = categoria;
             renderCategoryBar();
-            renderLugares(lugares.filter(l => l.categoria === categoria));
+            const filtered = lugares.filter(l => l.categoria === categoria);
+            renderLugares(filtered);
             ponerMarcadores();
+            // Fit map to category points
+            const bounds = getBoundsForLugares(filtered);
+            if (bounds) map.fitBounds(bounds, { padding: [30, 30] });
         });
         bar.appendChild(icon);
     });
@@ -155,6 +172,14 @@ function renderLugares(lugaresFiltrados) {
 
             const lugarSummary = document.createElement('summary');
             lugarSummary.textContent = lugar.nombre;
+
+            // Focus map on this place when summary is clicked
+            lugarSummary.addEventListener('click', (e) => {
+                // Prevents toggling if already open, so we always focus
+                if (map && lugar.lat && lugar.lng) {
+                    map.setView([lugar.lat, lugar.lng], 16, { animate: true });
+                }
+            });
 
             const lugarContent = document.createElement('div');
             lugarContent.className = 'lugar-content';
