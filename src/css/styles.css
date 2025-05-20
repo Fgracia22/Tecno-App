@@ -80,8 +80,8 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 18px;
-    margin: 12px auto 12px;
+    gap: 14px;
+    margin: 12px auto 18px auto;
     width: 96vw;
     max-width: 480px;
     min-height: 48px;
