@@ -132,8 +132,8 @@ h1 {
 .categoria-dropdown summary:hover,
 .lugar-dropdown summary:focus,
 .categoria-dropdown summary:focus {
-    background: #ddeeff;
-    color: #007aff;
+    background: transparent;
+    color: #2a3d5b;
 }
 
 .lugar-dropdown summary::-webkit-details-marker,
