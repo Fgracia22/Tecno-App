@@ -80,7 +80,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+    gap: 9px;
     margin: 12px auto 18px auto;
     width: 96vw;
     max-width: 480px;
