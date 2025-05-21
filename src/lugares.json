@@ -3,36 +3,36 @@
         "nombre": "Can Trinxeria",
         "descripcion": "Masia històrica amb encant.",
         "categoria": "Cultura",
-        "lat": 41.88939596171802,
-        "lng": 2.8787560472268527
+        "lat": 41.888867,
+        "lng": 2.876561
     },
     {
         "nombre": "Tomba del Soldat desconegut",
         "descripcion": "Ruta per anar a caminar per Cassà de la Selva.",
         "categoria": "Natura",
-        "lat": 41.89232577289942,
-        "lng": 2.89259962396168
+        "lat": 41.892252,
+        "lng": 2.892782
     },
     {
         "nombre": "La Pahissa de Can Abras Casa Rural",
         "descripcion": "Allotjament rural en un entorn tranquil i natural.",
         "categoria": "Allotjament",
-        "lat": 41.870775656802635,
-        "lng": 2.9027812613688804
+        "lat": 41.871429,
+        "lng": 2.902278
     },
     {
         "nombre": "Pineda Fosca",
         "descripcion": "Paratge natural ideal per fer passejades a l'ombra dels pins.",
         "categoria": "Natura",
-        "lat": 41.86751096891585,
-        "lng": 2.8806334337264965
+        "lat": 41.866477,
+        "lng": 2.880263
     },
     {
         "nombre": "Mercadona",
         "descripcion": "Supermercat amb una gran varietat de productes per a la llar.",
         "categoria": "Botigues",
-        "lat": 41.893757040090236,
-        "lng": 2.864920659978333
+        "lat": 41.887364,  
+        "lng": 2.867378
     },
     {
         "nombre": "Farmàcia Baleri",
@@ -119,14 +119,14 @@
         "lng": 2.8727395124665915
     },
     {
-        "nombre": "Parque del Uno de Octubre",
-        "descripcion": "Espai verd amb jocs infantils i bancs.",
+        "nombre": "Parc de l'U d'Octubre",
+        "descripcion": "Parc bonic amb bancs.",
         "categoria": "Natura",
-        "lat": 41.886828133381165,
-        "lng": 2.8679630528452327
+        "lat": 41.886247,
+        "lng": 2.868083
     },
     {
-        "nombre": "ParkArt",
+        "nombre": "ParcArt",
         "descripcion": "Espai dedicat a l'art i la cultura.",
         "categoria": "Cultura",
         "lat": 41.89704972461124,
@@ -152,5 +152,26 @@
         "categoria": "Botigues",
         "lat": 41.88939596171802,
         "lng": 2.8787560472268527
+    },
+    {
+        "nombre": "Hostal Cassà",
+        "descripcion": "Allotjament amb serveis bàsics.",
+        "categoria": "Allotjament",
+        "lat": 41.89228663445939,
+        "lng": 2.867587206525285
+    },
+    {
+        "nombre": "Can Jimmy",
+        "descripcion": "Mini supermercat local amb bastants dolços.",
+        "categoria": "Botigues",
+        "lat": 41.88825029865481,
+        "lng": 2.87474233655344
+    },
+    {
+        "nombre": "Supermercat Dia",
+        "descripcion": "Supermercat amb una àmplia gamma de productes.",
+        "categoria": "Botigues",
+        "lat": 41.89105656341217,
+        "lng": 2.878103087793892
     }
 ]
