@@ -198,8 +198,9 @@ h1 {
     display: none;
 }
 
-.lugar-dropdown summary::after,
-.categoria-dropdown summary::after {
+.lugar-dropdown > summary::after,
+.categoria-dropdown > summary::after {
+    /* default arrow */
     content: "▾";
     font-size: 1.2em;
     margin-left: auto;
@@ -208,8 +209,9 @@ h1 {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.lugar-dropdown[open] summary::after,
-.categoria-dropdown[open] summary::after {
+.lugar-dropdown[open] > summary::after,
+.categoria-dropdown[open] > summary::after {
+    /* only rotate arrow if THIS details is open */
     transform: rotate(180deg) translateY(1px);
     color: #005ecb;
 }
@@ -285,6 +287,25 @@ h1 {
     border: 1px solid #d1e4f9;
 }
 
+.lugar-summary {
+    font-size: 1.13em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    user-select: none;
+    transition: color 0.2s, background 0.2s;
+    color: #2a3d5b;
+    border-radius: 8px;
+    padding: 0.5em 0.2em;
+    background: transparent;
+    outline: none;
+}
+
+.lugar-summary:hover, .lugar-summary:focus {
+    background: #eaf3ff;
+    color: #2a3d5b;
+}
 
 @media (max-width: 600px) {
     h1 {

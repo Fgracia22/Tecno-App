@@ -141,41 +141,63 @@ function renderLugares(lugaresFiltrados) {
     const list = document.getElementById('lugares-list');
     list.innerHTML = '';
 
-    // Agrupem per categoria
-    const categorias = {};
-    lugaresFiltrados.forEach(lugar => {
-        if (!categorias[lugar.categoria]) {
-            categorias[lugar.categoria] = [];
-        }
-        categorias[lugar.categoria].push(lugar);
-    });
+    if (selectedCategory === null) {
+        // Agrupem per categoria i fem desplegables
+        const categorias = {};
+        lugaresFiltrados.forEach(lugar => {
+            if (!categorias[lugar.categoria]) {
+                categorias[lugar.categoria] = [];
+            }
+            categorias[lugar.categoria].push(lugar);
+        });
 
-    // Creem desplegables per cada categoria
-    Object.keys(categorias).forEach(categoria => {
-        const catDetails = document.createElement('details');
-        catDetails.className = 'categoria-dropdown';
+        Object.keys(categorias).forEach(categoria => {
+            const catDetails = document.createElement('details');
+            catDetails.className = 'categoria-dropdown';
 
-        const catSummary = document.createElement('summary');
-        catSummary.textContent = categoria;
-        catDetails.appendChild(catSummary);
+            const catSummary = document.createElement('summary');
+            catSummary.textContent = categoria;
+            catDetails.appendChild(catSummary);
 
-        // Espai per posar descripció personalitzada de la categoria
-        const catDescription = document.createElement('div');
-        catDescription.className = 'categoria-descripcio';
-        catDescription.innerHTML = `<p>Explora els llocs destacats dins la categoria <strong>${categoria}</strong>.</p>`;
-        catDetails.appendChild(catDescription);
+            const catDescription = document.createElement('div');
+            catDescription.className = 'categoria-descripcio';
+            catDescription.innerHTML = `<p>Explora els llocs destacats dins la categoria <strong>${categoria}</strong>.</p>`;
+            catDetails.appendChild(catDescription);
 
-        // Afegim llocs dins de cada categoria
-        categorias[categoria].forEach(lugar => {
+            categorias[categoria].forEach(lugar => {
+                const lugarDetails = document.createElement('details');
+                lugarDetails.className = 'lugar-dropdown';
+
+                const lugarSummary = document.createElement('summary');
+                lugarSummary.textContent = lugar.nombre;
+
+                lugarSummary.addEventListener('click', (e) => {
+                    if (map && lugar.lat && lugar.lng) {
+                        map.setView([lugar.lat, lugar.lng], 16, { animate: true });
+                    }
+                });
+
+                const lugarContent = document.createElement('div');
+                lugarContent.className = 'lugar-content';
+                lugarContent.innerHTML = `<p>${lugar.descripcion || 'Sense descripció disponible.'}</p>`;
+
+                lugarDetails.appendChild(lugarSummary);
+                lugarDetails.appendChild(lugarContent);
+                catDetails.appendChild(lugarDetails);
+            });
+
+            list.appendChild(catDetails);
+        });
+    } else {
+        // Mostra només els dropdowns dels llocs d'aquesta categoria, sense el dropdown gran de categoria
+        lugaresFiltrados.forEach(lugar => {
             const lugarDetails = document.createElement('details');
             lugarDetails.className = 'lugar-dropdown';
 
             const lugarSummary = document.createElement('summary');
             lugarSummary.textContent = lugar.nombre;
 
-            // Focus map on this place when summary is clicked
             lugarSummary.addEventListener('click', (e) => {
-                // Prevents toggling if already open, so we always focus
                 if (map && lugar.lat && lugar.lng) {
                     map.setView([lugar.lat, lugar.lng], 16, { animate: true });
                 }
@@ -187,11 +209,9 @@ function renderLugares(lugaresFiltrados) {
 
             lugarDetails.appendChild(lugarSummary);
             lugarDetails.appendChild(lugarContent);
-            catDetails.appendChild(lugarDetails);
+            list.appendChild(lugarDetails);
         });
-
-        list.appendChild(catDetails);
-    });
+    }
 }
 
 
