@@ -31,8 +31,8 @@
         "nombre": "Mercadona",
         "descripcion": "Supermercat amb una gran varietat de productes per a la llar.",
         "categoria": "Botigues",
-        "lat": 41.887364,  
-        "lng": 2.867378
+        "lat": 41.887086,
+        "lng": 2.867879
     },
     {
         "nombre": "Farmàcia Baleri",
@@ -115,8 +115,8 @@
         "nombre": "Plaça de l'Eixample",
         "descripcion": "Plaça cèntrica amb espais per seure i descansar.",
         "categoria": "Natura",
-        "lat": 41.890964844936036,
-        "lng": 2.8727395124665915
+        "lat": 41.890597,
+        "lng": 2.872840
     },
     {
         "nombre": "Parc de l'U d'Octubre",
@@ -143,8 +143,8 @@
         "nombre": "House Of Burger Cassà",
         "descripcion": "Hamburgueseria moderna amb opcions variades.",
         "categoria": "Restauració",
-        "lat": 41.888710642693546,
-        "lng": 2.8774518983919033
+        "lat": 41.888557,
+        "lng": 2.877582
     },
     {
         "nombre": "La Bicycle",
@@ -157,8 +157,8 @@
         "nombre": "Hostal Cassà",
         "descripcion": "Allotjament amb serveis bàsics.",
         "categoria": "Allotjament",
-        "lat": 41.89228663445939,
-        "lng": 2.867587206525285
+        "lat": 41.891325,
+        "lng": 2.868173
     },
     {
         "nombre": "Can Jimmy",
