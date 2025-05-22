@@ -105,18 +105,53 @@ function mostrarLugares() {
 
 function planSorpresa() {
     if (lugares.length === 0) return;
-    const random = lugares[Math.floor(Math.random() * lugares.length)];
-    alert(`El teu plan sorpresa és: ${random.nombre}!`);
-    if (map && random.lat && random.lng) {
-        map.setView([random.lat, random.lng], 16);
+
+    // Filtra per categories principals
+    const visitar = lugares.filter(l => l.categoria === 'Cultura' || l.categoria === 'Natura');
+    const menjar = lugares.filter(l => l.categoria === 'Restauració');
+    const dormir = lugares.filter(l => l.categoria === 'Allotjament');
+
+    // Si falta alguna categoria, mostra un missatge d'error
+    if (visitar.length === 0 || menjar.length === 0 || dormir.length === 0) {
+        alert('No hi ha prou llocs per fer un pla complet!');
+        return;
+    }
+
+    // Tria un lloc aleatori de cada categoria
+    const llocVisitar = visitar[Math.floor(Math.random() * visitar.length)];
+    const llocMenjar = menjar[Math.floor(Math.random() * menjar.length)];
+    const llocDormir = dormir[Math.floor(Math.random() * dormir.length)];
+
+    // Missatges personalitzats
+    const missatge =
+        `El teu pla sorpresa per avui:\n\n` +
+        `🌄 Visitar: ${llocVisitar.nombre}\n   ➔ ${llocVisitar.descripcion}\n\n` +
+        `🍽️ Menjar a: ${llocMenjar.nombre}\n   ➔ ${llocMenjar.descripcion}\n\n` +
+        `🏨 Dormir a: ${llocDormir.nombre}\n   ➔ ${llocDormir.descripcion}`;
+
+    alert(missatge);
+
+    // Deselect category and show only the 3 chosen places
+    selectedCategory = null;
+    renderCategoryBar();
+
+    // Mostra només els 3 llocs triats
+    const seleccionats = [llocVisitar, llocMenjar, llocDormir];
+    renderLugares(seleccionats);
+    ponerMarcadores(seleccionats);
+
+    // Centra el mapa al mig dels 3 punts
+    const bounds = getBoundsForLugares(seleccionats);
+    if (map && bounds) {
+        map.fitBounds(bounds, { padding: [30, 30] });
     }
 }
 
-function ponerMarcadores() {
+function ponerMarcadores(lugaresArr) {
     markers.forEach(marker => map.removeLayer(marker));
     markers = [];
-    let filtered = lugares;
-    if (selectedCategory) {
+    let filtered = lugaresArr || lugares;
+    if (!lugaresArr && selectedCategory) {
         filtered = lugares.filter(l => l.categoria === selectedCategory);
     }
     filtered.forEach(lugar => {
