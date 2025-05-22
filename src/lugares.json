@@ -92,8 +92,8 @@
     },
     {
         "nombre": "Can Raset",
-        "descripcion": "Masia o establiment amb encant rural.",
-        "categoria": "Cultura",
+        "descripcion": "Allotjament amb encant rural.",
+        "categoria": "Allotjament",
         "lat": 41.89051344768201,
         "lng": 2.870329268146075
     },
@@ -101,15 +101,15 @@
         "nombre": "Caprabo",
         "descripcion": "Supermercat amb secció de productes frescos.",
         "categoria": "Botigues",
-        "lat": 41.89026500421115,
-        "lng": 2.8731246286899994
+        "lat": 41.890000,
+        "lng": 2.873342
     },
     {
         "nombre": "Cassà Oil S.L.",
         "descripcion": "Gasolinera amb serveis per al vehicle.",
         "categoria": "Serveis",
-        "lat": 41.89110261579945,
-        "lng": 2.8656482928458153
+        "lat": 41.890535,
+        "lng": 2.865207
     },
     {
         "nombre": "Plaça de l'Eixample",
@@ -164,14 +164,35 @@
         "nombre": "Can Jimmy",
         "descripcion": "Mini supermercat local amb bastants dolços.",
         "categoria": "Botigues",
-        "lat": 41.88825029865481,
-        "lng": 2.87474233655344
+        "lat": 41.888221,
+        "lng": 2.874920
     },
     {
         "nombre": "Supermercat Dia",
         "descripcion": "Supermercat amb una àmplia gamma de productes.",
         "categoria": "Botigues",
-        "lat": 41.89105656341217,
-        "lng": 2.878103087793892
+        "lat": 41.890749018064376,
+        "lng": 2.877997732342804
+    },
+    {
+        "nombre": "La Fusta",
+        "descripcion": "Restaurant amb gran varietat de menjar.",
+        "categoria": "Restauració",
+        "lat": 41.88988780060917,
+        "lng": 2.8722214064034604
+    },
+    {
+        "nombre": "Picina Municipal de Cassà",
+        "descripcion": "Instal·lacions per a la natació i activitats aquàtiques.",
+        "categoria": "Serveis",
+        "lat": 41.88244419721717,
+        "lng": 2.8780464112161517
+    },
+    {
+        "nombre": "Can Déu del Firal",
+        "descripcion": "Hotel amb tot el necessari per a una estada còmoda.",
+        "categoria": "Allotjament",
+        "lat": 41.88836220082656,
+        "lng": 2.8808051251388522
     }
 ]
