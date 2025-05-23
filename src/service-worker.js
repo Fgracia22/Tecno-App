@@ -1,6 +1,6 @@
-// filepath: c:\Users\Ferran\Documents\Tenco-app\src\service-worker.js
+// filepath: c:\Users\Ferran\Documents\Tecno-App\src\service-worker.js
 
-const CACHE_NAME = 'tenco-app-cache-v7'; // Updated version
+const CACHE_NAME = 'tenco-app-cache-v7';
 const urlsToCache = [
     '/',
     '/index.html',
@@ -11,7 +11,6 @@ const urlsToCache = [
     'https://unpkg.com/leaflet/dist/leaflet.css'
 ];
 
-// Install the service worker
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
@@ -21,7 +20,6 @@ self.addEventListener('install', (event) => {
     );
 });
 
-// Fetch resources from the cache
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
@@ -31,7 +29,6 @@ self.addEventListener('fetch', (event) => {
     );
 });
 
-// Activate the service worker and clean up old caches
 self.addEventListener('activate', (event) => {
     const cacheWhitelist = [CACHE_NAME];
     event.waitUntil(

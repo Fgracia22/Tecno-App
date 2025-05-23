@@ -1,11 +1,11 @@
 {
-    "name": "Descubre Tu Ciudad",
-    "short_name": "Descubreix Cassà",
+    "name": "Descobreix La Teva Ciutat",
+    "short_name": "Descobreix Cassà",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#007aff",
-    "description": "Una app web sencilla para descubrir lugares interesantes en Cassà de la Selva.",
+    "description": "Una app web senzilla per descobrir llocs interessants a Cassà de la Selva.",
     "icons": [
         {
             "src": "img/192x192.png",
