@@ -11,15 +11,13 @@ Una app web sencilla para descubrir lugares interesantes en Cassà de la Selva.
 - `src/css/styles.css`: Estilos.
 - `src/js/app.js`: Lógica JS.
 
-## Uso
+# Una app web senzilla per descobrir llocs interessants a Cassà de la Selva.
 
-1. Asegúrate de tener un servidor local para evitar problemas de CORS (por ejemplo, con Live Server).
-2. Abre `src/index.html` en tu navegador.
-3. Para instalar la PWA, añade la aplicación a la pantalla de inicio desde el navegador.
+## Estructura
 
-## Mejoras futuras
-
-- Filtros por categoría.
-- Más información de cada lugar.
-- Mejor integración con el mapa.
-- Soporte para múltiples idiomas.
+- `src/index.html`: Pàgina principal.
+- `src/lugares.json`: Llista de llocs.
+- `src/manifest.json`: Manifest de l'aplicació web.
+- `src/service-worker.js`: Script del service worker per a capacitats offline.
+- `src/css/styles.css`: Estils.
+- `src/js/app.js`: Lògica JS.
